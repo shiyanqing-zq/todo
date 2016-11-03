@@ -1,0 +1,28 @@
+$d-list:320px,360px,600px,384px,375px,412px,768px，414px,1440px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    list-style: none;
+}
+body{
+    background: #eee;
+}
+html{
+    font-size:100px;
+}
+body{
+    font-size:15px;
+}
+@each $w in $d-list{
+    @media screen and (min-width:$w){
+        html{
+            font-size:100px*$w/640px;
+        }
+    }
+}
+.header{
+    width:100%;
+    height:0.87rem;
+    background: #393f43;
+}

@@ -1,0 +1,14 @@
+$d-list:320px,360px,600px,384px,375px,412px,768px;
+html{
+    font-size:100px;
+}
+body{
+    font-size:15px;
+}
+@each $w in $d-list{
+    @media screen and (min-width:$w){
+        html{
+            font-size:100px*$w/750px;
+        }
+    }
+}
