@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width"/>
+	<!-- Add to homescreen for Safari on Ios -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="todo">
+	<link rel="apple-touch-icon" href="./images/logo1.png">
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="todo">
+	<meta name="theme-color" content="#2F3BA2">
+	<link rel="icon" sizes="192x192" href="./images/logo1.png">
+	<title>todolist</title>
+	<link rel="stylesheet" href="./css/todo.css" />
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_cw0sfio5mictbj4i.css" />
+</head>
+<body>
+	<!--首页-->
+	<div class="bd">
+		<div class="home">
+			<a href="javascript:;">
+				<img src="images/tb.jpg" alt="" />
+			</a>
+		</div>
+	</div>
+	<!--header-->
+	<div class="header">
+		<span class="back iconfont">&#xe641;</span>
+		<input type="text" class="input"/>
+		<div class="add iconfont">&#xe663;</div>
+	</div>
+	<!--上侧nav-->
+	<!--<div class="nav">
+		<span class="iconfont">&#xe792;</span>
+		<span class="iconfont">&#xe795;</span>
+		<span class="iconfont">&#xe7b1;</span>
+		<span class="iconfont">&#xe85c;</span>
+	</div>-->
+	<ul id="ul">
+		<li class="done">
+			<div class="content">
+				很重要
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
+		</li>
+		<li class="">
+			<div class="content">
+				很紧急
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
+		</li>
+		<li class="">
+			<div class="content">
+				不重要
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
+		</li>
+	</ul>
+	<div class="doset">
+		<p>添加至待办集项目了，快去完成该项目啦！</p>
+		<a href="javascript" class="iconfont">&#xe62e;</a>
+	</div>
+	<!--<input type="date" />-->
+	<div class="footer">
+		<div data-role="all" class="all">
+			<span class="iconfont"><br/>所有</span>
+		</div>
+		<div data-role="com" class="complete iconfont">
+			<span><br/>已完成</span>
+		</div>
+		<!--<div data-role="now" class="nowan">未封存</div>-->
+	</div>
+	
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/todolist.js"></script>

@@ -1,0 +1,281 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+ul li{
+    list-style:none;
+}
+$d-list:320px,360px,375px,384px,412px,414px,510px,600px,640px,768px,800px,1600px,1440px;
+html{
+    font-size:100px;
+}
+body{
+    font-size:16px;
+//  background-image:url(../images/todo.jpg);
+    background:#fff;
+    font-family:"微软雅黑"；
+}
+$design-size:750px;
+@each $w in $d-list{
+    @media screen and (min-width:#{$w}) {
+        html{
+            font-size:100px * $w / $design-size;
+        }
+    }
+}
+@mixin top-bottom{
+    position:absolute;
+    top:0rem;
+    bottom:0rem;
+    margin:auto;
+}
+@mixin center{
+    position:absolute;
+    top:0rem;
+    bottom:0rem;
+    left:0rem;
+    right:0rem;
+    margin:auto;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id："172799" */
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot') format('embedded-opentype'),
+  url('../font/iconfont.woff') format('woff'),
+  url('../font/iconfont.ttf') format('truetype'),
+  url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont";
+}
+/*home*/
+.home{
+    width:5rem;
+    height:5rem;
+    background:url(../images/home.png);
+    background-size:cover;
+    @include center;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    a{
+        display:block;
+        width:2.6rem;
+        height:2.6rem;
+        white-space:pre-wrap;
+        @include center;
+        top:0.8rem;
+        line-height:0.6rem;
+        text-align:center;
+        text-decoration:none;
+        color:#383838;
+        font-weight:600;
+        padding:0.15rem;
+    }
+}
+/*header*/
+.header{
+    width:100%;
+    height:1.12rem;
+    position:relative;
+    border-bottom:1px solid #ccc;
+    background:#354462;
+    span.iconfont{
+        display:inline-block;
+        width:0.5rem;
+        height:0.5rem;
+        border-radius:50%;
+        @include top-bottom;
+        left:0.3rem;
+        color:#fff;
+        text-align:center;
+        line-height:0.5rem;
+        font-size:28px;
+    }
+    input.input{
+        display:inline-block;
+        width:86%;
+        height:0.8rem;
+        outline:none;
+        border:none;
+        padding-left:0.3rem;
+        font-size:0.5rem;
+        margin:0.15rem 0.1rem 0rem 0.9rem;
+    }
+    .add{
+        display:inline-block;
+        width:0.5rem;
+        height:0.5rem;
+        background:#02E6B5;
+        border-radius:50%;
+        @include top-bottom;
+        right:0.3rem;
+        color:#fff;
+        text-align:center;
+        line-height:0.5rem;
+        font-size:28px;
+    }
+}
+/*上侧nav*/
+.nav{
+    height:0.99rem;
+    margin:0.1rem auto;
+    line-height:0.99rem;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    span.iconfont{
+        display:inline-block;
+        width:0.36rem;
+        height:0.36rem;
+        float:left;
+        padding-left:0.3rem;
+        padding-right:0.3rem;
+        margin:0rem 0.62rem;
+        text-align:center;
+    }
+}
+/*content*/
+#ul{
+    width:95%;
+    margin:0px auto;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    li{
+        border-radius:1%;
+    }
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    li.done .content{
+        border-radius:1%;
+//      text-decoration:line-through;
+        text-decoration:underline;
+        color:#FF0000;
+    }
+    li.done .delete{
+        color:#FF0000;
+    }
+    li .content{
+        float:left;
+        width:46%;
+        height:1rem;
+        background:#02E6B5;
+        padding:0.1rem;
+        margin:0.1rem 0rem 0.1rem 0.26rem;
+        position:relative;
+    }
+    li .delete{
+        width:0.3rem;
+        height:0.3rem;
+        @include top-bottom;
+        top:-0.5rem;
+        right:0.1rem;
+        border-radius:50%;
+        text-align:center;
+        line-height:0.3rem;
+    }
+}
+/*doset待办集弹出框*/
+.doset{
+    width:4.9rem;
+    height:3rem;
+    @include center;
+    background:green;
+    text-align:center;
+    line-height:0.5rem;
+    font-size:18px;
+    padding:0.2rem;
+    white-space:pre-wrap;
+    background:#fff;
+    box-shadow:0rem 0rem 0.3rem rgba(0,0,0,.5);
+    p{
+       margin-top:0.5rem;
+       color:#666;
+       font-size:600;
+    }
+    a{
+        display:block;
+        width:1rem;
+        height:1rem;
+        @include center;
+        top:-0.8rem;
+        font-size:30px;
+        text-decoration:none;
+        color:#FFE446;
+    }
+}
+/*footer*/
+.footer{
+    width:100%;
+//  margin:0.1rem 0.15rem 0rem 0.33rem;
+    position:fixed;
+    *position:absolute;
+    bottom:0rem;
+    text-align:center;
+    background:#02E6B5;
+//  border-radius:0.5rem;
+    background:#fff;
+    border-top:1px solid #eee;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    div{
+        width:45.333%;
+        height:0.88rem;
+        text-align:center;
+        line-height:0.38rem;
+//      background:#fff;
+        float:left;
+        cursor:pointer;
+//      border-radius:0.8rem;
+    }
+    div:nth-child(1){
+        margin:0rem 0.3rem 0rem 0rem; 
+    }
+    div:nth-child(2){
+        margin:0rem 0rem 0rem 0.39rem;
+    }
+//  div.complete{
+//      border-right:0.01rem solid #ccc;
+//      border-left:0.01rem solid #ccc;
+//  }
+    div.active{
+//      background:#fff;
+        color:#00695c;
+    }
+    
+}
+.footer div:nth-child(1).active{
+    color:#00695C;
+}
+.clearall{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    margin:0.2rem 0.15rem 0rem 5rem;
+    font-size: 16px;
+}
+.dong1{
+    animation: active1  0.8s ease-in-out both;
+}
+@keyframes active1{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(150%);
+    }
+}
+
